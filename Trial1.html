@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <!--Setting the auxiliary files -->
+    <meta name = 'viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@3.x/css/materialdesginicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+
+    <!--Styling of grid to visually see the design-->
+    <style>
+        .border_style{
+            border-color: green;
+            border-width: 1px;
+            border-style: solid;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <!--Creation of the content where the Vue will be used-->
+        <v-app>
+            <!--App navigation bar-->
+            <v-app-bar app color='primary' dark fixed>
+                <v-app-bar-nav-icon> </v-app-bar-nav-icon>
+                <v-toolbar-title> Main Page Trial</v-toolbar-title>
+            </v-app-bar>
+
+            <!-- Main content of the page-->
+            <v-content> 
+                <v-container> 
+                    <h1> This is a first trial</h1>
+                    <v-divider> </v-divider>
+                    <p> I want to try some basic card design and rendering</p>
+                </v-container>
+                <!--Grid for the destinations. We specify the img, title and subtitle. Each destination is in a new v-col-->
+                <v-container>
+                    <!--Automating the column making-->
+                    <v-row> 
+                        <v-col v-for='i in dest' cols='12' sm='6' class='border_style'>
+                            <v-card>
+                                <v-img :src='i.img' aspect-ratio='2.3'> </v-img> 
+                                <v-card-text> 
+                                    <div>
+                                       <h2 class='title primary--text mb-2'> {{i.name}}</h2>                             
+                                            {{i.desc}}
+                                    </div>
+                                </v-card-text>
+                                <v-card-actions> 
+                                    <v-btn outlined class='mx-auto'> Learn More!</v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-container>
+            </v-content>
+
+            <!--Footer-->
+            <v-footer color='secondary' dark fixed> 
+                <div class='mx-auto'> Copyright &copy;</div>
+            </v-footer>
+        </v-app>
+    </div>
+
+    <!--Linking to Vue and creating appropiate structures-->
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'> </script>
+    <script src='https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js'> </script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+                dest: [{
+                    name: 'Dest 1!',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    desc: 'Number 1] Here we can insert information about the destination. Activities, alerts, main attractions, etc.',  
+                },
+                {
+                    name: 'Dest 2!',
+                    img: 'https://i.picsum.photos/id/987/400/300.jpg?hmac=qOkMzuXduuyc5-87EuN1lxmii1v7Z-34jesNQlwiyXs',
+                    desc: 'Number 2] Here we can insert information about the destination. Activities, alerts, main attractions, etc.',  
+                },
+                {
+                    name: 'Dest 3!',
+                    img: 'https://i.picsum.photos/id/200/400/300.jpg?hmac=lGKSofs7PgZo646BbRSOhTNhEuRS-FISyNTNUm14rsQ',
+                    desc: 'Number 3] Here we can insert information about the destination. Activities, alerts, main attractions, etc.',  
+                }]
+            }
+        })
+    </script>
+
+</body>
+
+</html> 
