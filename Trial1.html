@@ -17,6 +17,17 @@
             border-style: solid;
             background-color: greenyellow;
         }
+        .column {
+            flex: 30%;
+            height: 200px;
+            padding: 10px;
+            margin: 50px;
+            background-color: #cccccc;
+            text-align: center;
+        }
+        .grid_container {
+        display: flex;
+        }	
     </style>
 </head>
 
@@ -32,8 +43,8 @@
 
             <!-- Main content of the page-->
             <v-content> 
-                <v-container> 
-                    <h1> This is a first trial</h1>
+                <v-container display='block'> 
+                    <h1> This is a first trial</h1> 
                     <v-divider> </v-divider>
                     <p> I want to try some basic card design and rendering</p>
                 </v-container>
@@ -57,10 +68,35 @@
                         </v-col>
                     </v-row>
                 </v-container>
+        
+
+                <div style='background-color: red;'> 
+                    <h1 style='text-align: center; color: white;'> Why choose us? </h1>
+                    <div class="grid_container">
+                        <div class="column">
+                            <v-icon x-large> rowing </v-icon>
+                            <h2> First column </h2>
+                            <p> This is the first reason</p>
+                        </div>
+
+                        <div class="column">
+                            <v-icon x-large> cabin </v-icon>
+                            <h2> Second column </h2>
+                            <p> This is the second reason</p>
+                        </div>
+
+                        <div class="column">
+                            <v-icon x-large> rocket_launch </v-icon>
+                            <h2> Third column </h2>
+                            <p> This is the third reason</p>
+                        </div>
+
+                    </div>
+                </div>
             </v-content>
 
             <!--Footer-->
-            <v-footer color='secondary' dark fixed> 
+            <v-footer color='secondary' dark> 
                 <div class='mx-auto'> Copyright &copy;</div>
             </v-footer>
         </v-app>
