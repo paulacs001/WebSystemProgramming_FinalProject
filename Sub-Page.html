@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name = 'viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <title>Subpage Mockup</title>
+
+    <style> 
+    .scroll {
+        overflow-y: scroll
+    }
+    .v-card--reveal {
+        bottom: 0;
+        opacity: 1 !important;
+        position: absolute;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <!--Creation of the content where the Vue will be used-->
+        <v-app>
+            <!--App navigation bar-->
+            <v-app-bar app
+                fixed
+                color="white"
+            >
+                <img src="src/icon.png" height='40' width="45"></img>
+        
+                <v-toolbar-title>TOUR GUIDE</v-toolbar-title>
+        
+                <v-spacer></v-spacer>
+        
+                <v-btn icon width='50'>
+                <v-icon>mdi-magnify</v-icon>
+                </v-btn>
+        
+                <v-btn icon width='100'>
+                    Tours
+                </v-btn>
+        
+                <v-btn icon width='100'>
+                    Home
+                </v-btn>
+
+                <v-btn icon width='100'>
+                    About
+                </v-btn>
+
+                <v-btn icon width='100'>
+                    Contact
+                </v-btn>
+            </v-app-bar>
+
+            <!-- Main content of the page-->
+            
+            <v-content> 
+                <v-container> 
+                    <h1 style="text-align: center;"> Seoul </h1> 
+                    <v-divider> </v-divider>
+                    <h2>Recommended Places and Activities</h2> 
+                </v-container>
+                <!--Grid for the destinations. We specify the img, title and subtitle. Each destination is in a new v-col-->
+                <v-container>
+                    <!--Automating the column making-->
+                    <v-row> 
+                        <v-col v-for='i in act' :key= 'i.name' cols='6' sm='3'>
+                            <v-card height ='300'>
+                                <v-img :src='i.img' aspect-ratio='2.3'> </v-img> 
+                                <v-card-text> 
+                                    <div style="text-align: justify;">
+                        
+                                       <h2 class='title primary--text mb-2'> {{i.name}}</h2>                        
+                                        <i>Address: </i>  {{i.address}}
+                                    </div>
+                                </v-card-text>
+                                <!-- <v-card-actions> 
+                                    <v-btn outlined class='mx-auto'> Reserve Now!</v-btn>
+                                </v-card-actions> -->
+
+                                <!-- For toggling more text as a response to button click-->
+                                <v-card-actions>
+                                    <v-btn
+                                      text
+                                      color="teal accent-4"
+                                      @click="i.reveal = true"
+                                    >
+                                      Learn More
+                                    </v-btn>
+                                </v-card-actions>
+                              
+                                <v-expand-transition>
+                                    <v-card
+                                      v-if="i.reveal"
+                                      class="transition-fast-in-fast-out v-card--reveal scroll"
+                                      style="height: 100%;"
+                                    >
+                                        <v-card-text class="pb-0">
+                                            {{i.desc}}
+                                        </v-card-text>
+                                        <v-card-actions class="pt-0">
+                                            <v-btn
+                                            text
+                                            color="teal accent-4"
+                                            @click="i.reveal = false"
+                                            >
+                                            Close
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-expand-transition>
+
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-container>
+        
+            </v-content>
+
+            <!--Footer-->
+            <v-footer color='secondary' dark> 
+                <div class='mx-auto'> Copyright &copy;</div>
+            </v-footer>
+        </v-app>
+    </div>
+
+    <!--Linking to Vue and creating appropiate structures-->
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'> </script>
+    <script src='https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js'> </script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+                reveal: false,
+                act: [{
+                    name: 'Namsan Tower',
+                    img: 'src/namsan.jpg',
+                    desc: 'The N Seoul Tower (Korean: N서울타워), officially the YTN Seoul Tower and commonly known as Namsan Tower or Seoul Tower, is a communication and observation tower located on Namsan Mountain in central Seoul, South Korea. The 236-meter (774 ft)-tall tower marks the second highest point in Seoul.',  
+                    address: '105 Namsangongwon-gil, Yongsan 2(i)ga-dong, Yongsan-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Activity 2!',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    desc: 'Number 2] Here we can insert the desired activity description',
+                    address: 'Add 2',
+                    reveal: false,
+                },
+                {
+                    name: 'Activity 3!',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    desc: 'Number 3] Here we can insert the desired activity description',
+                    address: 'Add 3',
+                    reveal: false,
+                },
+                {
+                    name: 'Activity 4!',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    desc: 'Number 4] Here we can insert the desired activity description',  
+                    address: 'Add 4',
+                    reveal: false,
+                },
+                {
+                    name: 'Activity 5!',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    desc: 'Number 5] Here we can insert the desired activity description',
+                    address: 'Add 5',
+                    reveal: false,
+                },
+                {
+                    name: 'Activity 6!',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    desc: 'Number 6] Here we can insert the desired activity description', 
+                    address: 'Add 6',
+                    reveal: false,
+                },
+                {
+                    name: 'Activity 7!',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    desc: 'Number 7] Here we can insert the desired activity description',  
+                    address: 'Add 7',
+                    reveal: false,
+                },
+                {
+                    name: 'Activity 8!',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    desc: 'Number 8] Here we can insert the desired activity description',
+                    address: 'Add 8',
+                    reveal: false,
+                }]
+            }
+        })
+    </script>
+
+</body>
+
+</html> 
