@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <meta name = 'viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui'>
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link rel="icon" href="Images/logo.png"/>
+    <title>Cities</title>
+</head>
+
+<body>
+    <div id='app'>
+        <!--Creation of the content where the Vue will be used-->
+        <v-app>
+            <!--App navigation bar-->
+            <v-app-bar app
+                fixed
+                color="white"
+            >
+                <a href="index.html">
+                  <img src="src/icon.png" height='60px' width="60px"></img>
+                  <!-- <v-toolbar-title>TOUR GUIDE</v-toolbar-title> -->
+                </a>
+
+                <v-spacer></v-spacer>
+
+                <v-btn icon width='50'>
+                <v-icon>mdi-magnify</v-icon>
+                </v-btn>
+
+                <v-btn icon width='100'>
+                    Tours
+                </v-btn>
+
+                <a href="index.html">
+                  <v-btn icon width='100'>
+                      Home
+                  </v-btn>
+                </a>
+
+                <v-btn icon width='100'>
+                    About
+                </v-btn>
+
+                <v-btn icon width='100'>
+                    Contact
+                </v-btn>
+            </v-app-bar>
+
+            <!-- Main content of the page-->
+            <v-content>
+              <v-container>
+                  <h1> Cities </h1>
+              </v-container>
+              <template>
+                <v-row>
+                  <v-col v-for='i in cities' :key= 'i.name' cols='12' sm='2'>
+                    <v-hover
+                      v-slot="{ hover }"
+                      open-delay="200"
+                    >
+                      <v-card
+                        :elevation="hover ? 16 : 2"
+                        :class="{ 'on-hover': hover }"
+                        class="mx-auto"
+                        height="350"
+                        max-width="350"
+                      >
+                        <v-card-text class="font-weight-medium mt-12 text-center text-subtitle-1">
+                          <h2 class='title primary--text mb-2'> {{i.name}}</h2>
+                          <v-img :src='i.img'
+                          aspect-ratio='2.3'
+                          height="250"
+
+                          > </v-img>
+                        </v-card-text>
+                      </v-card>
+                    </v-hover>
+                  </v-col>
+
+                </v-row>
+              </template>
+            </v-content>
+            <!--Footer-->
+            <v-footer color='secondary' dark>
+                <div class='mx-auto'> Copyright &copy;</div>
+            </v-footer>
+        </v-app>
+    </div>
+
+    <!--Linking to Vue and creating appropiate structures-->
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'> </script>
+    <script src='https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js'> </script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+                reveal: false,
+                alignments: [
+                   'center',
+                 ],
+                cities: [{
+                    name: 'Seoul',
+                    img: 'Images/seoulCity.jpeg',
+                    desc: 'The N Seoul Tower (Korean: N서울타워), officially the YTN Seoul Tower and commonly known as Namsan Tower or Seoul Tower, is a communication and observation tower located on Namsan Mountain in central Seoul, South Korea. The 236-meter (774 ft)-tall tower marks the second highest point in Seoul.',
+                    address: '105 Namsangongwon-gil, Yongsan 2(i)ga-dong, Yongsan-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Busan',
+                    img: 'Images/busan.jpeg',
+                    reveal: false,
+                },
+                {
+                    name: 'Jeju Island',
+                    img: 'Images/jeju.jpeg',
+                    reveal: false,
+                },
+                {
+                    name: 'Daegu',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    reveal: false,
+                },
+                {
+                    name: 'Jeongju',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    reveal: false,
+                },
+                {
+                    name: 'Yeosu',
+                    img: 'https://picsum.photos/id/1068/400/300',
+                    reveal: false,
+                }]
+            }
+        })
+    </script>
+
+</body>
+
+</html>
