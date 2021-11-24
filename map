@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>map</title>
+    
+</head>
+<body>
+<!-- size of map -->
+<div id="map" style="width:100%;height:350px;"></div>
+<!-- kakao map api -->
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ec3877cf23a215787c056417c5d28c49&libraries=services"></script>
+
+<script>
+var mapContainer = document.getElementById('map'),  
+    mapOption = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667), // center
+        level: 4 // enlargement level
+    };  
+
+// create map  
+var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+// places
+var positions = [
+    { 
+        // first position is main
+        name: `<div>Gyeongbokgung Palace</div>`, //name of place
+        address: '서울 종로구 사직로 161' //address 
+    },
+    {
+        name: '<div>국립현대미술관</div>',
+        address: '서울 종로구 삼청로 30' 
+    },
+    
+    // here we can add other places
+]
+
+// object that converts address into coordinate
+var geocoder = new kakao.maps.services.Geocoder();
+
+for(let i = 0; i < positions.length; i++) {
+    // search coordinate using address
+    geocoder.addressSearch(positions[i].address, function(result, status) {
+
+        // if search was successful,
+        if (status === kakao.maps.services.Status.OK) {
+
+            // coords is coordinates of address
+            var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+            // set center coordinate
+            if (i == 0) {
+                map.setCenter(coords);
+            }
+
+            // make marker
+            var marker = new kakao.maps.Marker({
+                map: map,
+                position: coords
+            });
+
+            // make information window
+            var infowindow = new kakao.maps.InfoWindow({
+                content: positions[i].name
+            });
+            infowindow.open(map, marker);
+        } 
+    });    
+}
+
+</script>
+</body>
+</html>
