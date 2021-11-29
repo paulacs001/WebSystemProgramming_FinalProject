@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name = 'viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <title>Subpage Mockup</title>
+
+    <style> 
+    .scroll {
+        overflow-y: scroll
+    }
+    .v-card--reveal {
+        bottom: 0;
+        opacity: 1 !important;
+        position: absolute;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <!--Creation of the content where the Vue will be used-->
+        <v-app>
+            <!--App navigation bar-->
+            <v-app-bar app
+                fixed
+                color="white"
+            >
+                <img src="src/icon.png" height='40' width="45"></img>
+        
+                <v-toolbar-title>TOUR GUIDE</v-toolbar-title>
+        
+                <v-spacer></v-spacer>
+        
+                <v-btn icon width='50'>
+                <v-icon>mdi-magnify</v-icon>
+                </v-btn>
+        
+                <v-btn icon width='100'>
+                    Tours
+                </v-btn>
+        
+                <v-btn icon width='100'>
+                    Home
+                </v-btn>
+
+                <v-btn icon width='100'>
+                    About
+                </v-btn>
+
+                <v-btn icon width='100'>
+                    Contact
+                </v-btn>
+            </v-app-bar>
+
+            <!-- Main content of the page-->
+            
+            <v-content> 
+                <v-container> 
+                    <h1 style="text-align: center;"> Busan </h1> 
+                    <v-divider> </v-divider>
+                    <h2>Recommended Places and Activities</h2> 
+                </v-container>
+                <!--Grid for the destinations. We specify the img, title and subtitle. Each destination is in a new v-col-->
+                <v-container>
+                    <!--Automating the column making-->
+                    <v-row> 
+                        <v-col v-for='i in act' :key= 'i.name' cols='6' sm='3'>
+                            <v-card height ='300'>
+                                <v-img :src='i.img' aspect-ratio='2.3'> </v-img> 
+                                <v-card-text> 
+                                    <div style="text-align: justify;">
+                        
+                                       <h2 class='title primary--text mb-2'> {{i.name}}</h2>                        
+                                        <i>Address: </i>  {{i.address}}
+                                    </div>
+                                </v-card-text>
+                                <!-- <v-card-actions> 
+                                    <v-btn outlined class='mx-auto'> Reserve Now!</v-btn>
+                                </v-card-actions> -->
+
+                                <!-- For toggling more text as a response to button click-->
+                                <v-card-actions>
+                                    <v-btn
+                                      text
+                                      color="teal accent-4"
+                                      @click="i.reveal = true"
+                                    >
+                                      Learn More
+                                    </v-btn>
+                                </v-card-actions>
+                              
+                                <v-expand-transition>
+                                    <v-card
+                                      v-if="i.reveal"
+                                      class="transition-fast-in-fast-out v-card--reveal scroll"
+                                      style="height: 100%;"
+                                    >
+                                        <v-card-text class="pb-0">
+                                            {{i.desc}}
+                                        </v-card-text>
+                                        <v-card-actions class="pt-0">
+                                            <v-btn
+                                            text
+                                            color="teal accent-4"
+                                            @click="i.reveal = false"
+                                            >
+                                            Close
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-expand-transition>
+
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-container>
+        
+            </v-content>
+
+            <!--Footer-->
+            <v-footer color='secondary' dark> 
+                <div class='mx-auto'> Copyright &copy;</div>
+            </v-footer>
+        </v-app>
+    </div>
+
+    <!--Linking to Vue and creating appropiate structures-->
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'> </script>
+    <script src='https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js'> </script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+                reveal: false,
+                act: [{
+                    name: 'Gwangalli',
+                    img: 'Images/gwangalli.png',
+                    desc: '-.',
+                    address: '219, Gwangan Beach-ro, Suyeong-gu, Busan',
+                    reveal: false,
+                },
+                {
+                    name: 'Haeundae',
+                    img: 'Images/haeundae.png',
+                    desc: '-.',
+                    address: 'U-dong, Haeundae-gu, Busan',
+                    reveal: false,
+                },
+                {
+                    name: 'Huinyeoul Culture Village',
+                    img: 'Images/haeundae.png',
+                    desc: '-.',
+                    address: '605-3 Yeongseon-dong 4-ga, Yeongdo-gu, Busan',
+                    reveal: false,
+                },
+                {
+                    name: 'Gamcheon Culture Village',
+                    img: 'Images/haeundae.png',
+                    desc: '-.', 
+                    address: '203 Gamcheon Culture Village Information Center, Gamnae 2-ro, Saha-gu, Busan',
+                    reveal: false,
+                },
+                {
+                    name: 'Haedong Yonggungsa Temple',
+                    img: 'Images/haeundae.png',
+                    desc: '-.',
+                    address: '86 Yonggung-gil, Gijang-eup, Gijang-gun, Busan',
+                    reveal: false,
+                },
+                {
+                    name: 'Taejongdae',
+                    img: 'Images/haeundae.png',
+                    desc: '-.',
+                    address: '24, Jeonmang-ro, Yeongdo-gu, Busan',
+                    reveal: false,
+                },
+                {
+                    name: 'Yeongdo Bongsan Village',
+                    img: 'Images/haeundae.png',
+                    desc: '-.',
+                    address: '788, Hana-gil, Yeongdo-gu, Busan',
+                    reveal: false,
+                },
+                {
+                    name: 'Choryang Ibagu-gil',
+                    img: 'Images/haeundae.png',
+                    desc: '-.',
+                    address: '865-48, Choryang-dong, Dong-gu, Busan',
+                    reveal: false,
+                }]
+            }
+        })
+    </script>
+
+</body>
+
+</html> 
