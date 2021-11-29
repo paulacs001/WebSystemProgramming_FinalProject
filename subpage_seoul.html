@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name = 'viewport' content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui'>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <title>Subpage Mockup</title>
+
+    <style> 
+    .scroll {
+        overflow-y: scroll
+    }
+    .v-card--reveal {
+        bottom: 0;
+        opacity: 1 !important;
+        position: absolute;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <div id='app'>
+        <!--Creation of the content where the Vue will be used-->
+        <v-app>
+            <!--App navigation bar-->
+            <v-app-bar app
+                fixed
+                color="white"
+            >
+                <img src="src/icon.png" height='40' width="45"></img>
+        
+                <v-toolbar-title>TOUR GUIDE</v-toolbar-title>
+        
+                <v-spacer></v-spacer>
+        
+                <v-btn icon width='50'>
+                <v-icon>mdi-magnify</v-icon>
+                </v-btn>
+        
+                <v-btn icon width='100'>
+                    Tours
+                </v-btn>
+        
+                <v-btn icon width='100'>
+                    Home
+                </v-btn>
+
+                <v-btn icon width='100'>
+                    About
+                </v-btn>
+
+                <v-btn icon width='100'>
+                    Contact
+                </v-btn>
+            </v-app-bar>
+
+            <!-- Main content of the page-->
+            
+            <v-content> 
+                <v-container> 
+                    <h1 style="text-align: center;"> Seoul </h1> 
+                    <v-divider> </v-divider>
+                    <h2>Recommended Places and Activities</h2> 
+                </v-container>
+                <!--Grid for the destinations. We specify the img, title and subtitle. Each destination is in a new v-col-->
+                <v-container>
+                    <!--Automating the column making-->
+                    <v-row> 
+                        <v-col v-for='i in act' :key= 'i.name' cols='6' sm='3'>
+                            <v-card height ='300'>
+                                <v-img :src='i.img' aspect-ratio='2.3'> </v-img> 
+                                <v-card-text> 
+                                    <div style="text-align: justify;">
+                        
+                                       <h2 class='title primary--text mb-2'> {{i.name}}</h2>                        
+                                        <i>Address: </i>  {{i.address}}
+                                    </div>
+                                </v-card-text>
+                                <!-- <v-card-actions> 
+                                    <v-btn outlined class='mx-auto'> Reserve Now!</v-btn>
+                                </v-card-actions> -->
+
+                                <!-- For toggling more text as a response to button click-->
+                                <v-card-actions>
+                                    <v-btn
+                                      text
+                                      color="teal accent-4"
+                                      @click="i.reveal = true"
+                                    >
+                                      Learn More
+                                    </v-btn>
+                                </v-card-actions>
+                              
+                                <v-expand-transition>
+                                    <v-card
+                                      v-if="i.reveal"
+                                      class="transition-fast-in-fast-out v-card--reveal scroll"
+                                      style="height: 100%;"
+                                    >
+                                        <v-card-text class="pb-0">
+                                            {{i.desc}}
+                                        </v-card-text>
+                                        <v-card-actions class="pt-0">
+                                            <v-btn
+                                            text
+                                            color="teal accent-4"
+                                            @click="i.reveal = false"
+                                            >
+                                            Close
+                                            </v-btn>
+                                        </v-card-actions>
+                                    </v-card>
+                                </v-expand-transition>
+
+                            </v-card>
+                        </v-col>
+                    </v-row>
+                </v-container>
+        
+            </v-content>
+
+            <!--Footer-->
+            <v-footer color='secondary' dark> 
+                <div class='mx-auto'> Copyright &copy;</div>
+            </v-footer>
+        </v-app>
+    </div>
+
+    <!--Linking to Vue and creating appropiate structures-->
+    <script src='https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js'> </script>
+    <script src='https://cdn.jsdelivr.net/npm/vuetify@2.2.x/dist/vuetify.js'> </script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: {
+                reveal: false,
+                act: [{
+                    name: 'Namsan Tower',
+                    img: 'src/namsan.jpg',
+                    desc: 'The N Seoul Tower (Korean: N서울타워), officially the N Seoul Tower and commonly known as Namsan Tower or Seoul Tower, is a communication and observation tower located on Namsan Mountain in central Seoul, South Korea. The 236-meter (774 ft)-tall tower marks the second highest point in Seoul.',  
+                    address: '105 Namsangongwon-gil, Yongsan 2(i)ga-dong, Yongsan-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Yeouido Hangang Park',
+                    img: 'src/yeouido.jpg',
+                    desc: 'Yeouido Park offers a forest, a lawn and an ecological pond in the heart of the city. Many citizens of Seoul come to this park to enjoy light exercise or walk. You can enjoy roller blading and a bicycle ride in the Culture Center, which is located in the middle of this park.',
+                    address: '330, Yeouidong-ro, Yeongdeungpo-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Gyeongbokgung Palace',
+                    img: 'Images/gyeongbokgung.png',
+                    desc: 'It was the largest palace built during the Joseon Dynasty. When visiting Gyeongbokgung Palace, the National Palace Museum and the National Folk Museum are also good to visit together. Night opening, which enters after 7 p.m. is popular.',
+                    address: 'Gyeongbokgung Palace, 161 Sajik-ro, Jongno-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Cheonggyecheon',
+                    img: 'Images/cheonggyecheon.jpeg',
+                    desc: 'At the starting point of Cheonggyecheon Stream, there is a candle fountain with three-color lights and a two-stage waterfall that falls 4m below. If you follow Cheonggyecheon Stream, you will find Dongdaemun DDP, a landmark in Seoul where rest, culture, and history coexist.',  
+                    address: 'Changshin-dong, Jongno-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Insadong',
+                    img: 'Images/insadong.png',
+                    desc: 'Insadong has long been loved by artists and writers. They gathered to form a commercial district and created Insadong, which is proud to be a space for traditional culture. It is the town with the deepest knowledge of culture and arts, and there are many traditional souvenir shops.',
+                    address: '44 Ssamji-gil, Insadong-gil, Jongno-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Bukchon Hanok Village',
+                    img: 'Images/hanokvillage.jpeg',
+                    desc: 'It is the only place in Seoul where traditional hanoks are gathered. Hanoks, historical and cultural resources, museums, and workshops are located throughout the winding maze-like alleys. The Bukchon Cultural Center is holding traditional cultural lectures such as calligraphy, tea ceremony, and pansori, as well as cultural events such as movie screenings and concerts.', 
+                    address: '37 Gyedong-gil, Jongno-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Seoul Forest',
+                    img: 'Images/seoulforest.jpeg',
+                    desc: 'Seoul Forest consists of four distinctive spaces: Culture and Arts Park, Experience Learning Center, Ecological Forest, and Wetland Ecological Center, and borders the Hangang River. You can enjoy the wonderful scenery of Eungbongsan Mountain, located opposite Seoul Forest, like a mirror on a mirror pond.',  
+                    address: '273 Ttukseom-ro, Seongdong-gu, Seoul',
+                    reveal: false,
+                },
+                {
+                    name: 'Naksan Park',
+                    img: 'Images/naksan.png',
+                    desc: 'Naksan Park is a night view spot where you can walk along the fortress of Hanyang City Wall, take a walk, and enjoy the night view of Seoul. The road to the mountain is divided into Hyehwamun, Dongdaemun, and Daehak-ro. We recommend going up through Ewha Village, where murals are located.',
+                    address: '41 Naksan-gil, Jongno-gu, Seoul',
+                    reveal: false,
+                }]
+            }
+        })
+    </script>
+
+</body>
+
+</html> 
