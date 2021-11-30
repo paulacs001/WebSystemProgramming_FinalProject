@@ -3,7 +3,11 @@
 <head>
     <meta charset="utf-8">
     <title>map</title>
-    
+    <style>
+        .place {
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
 <!-- size of map -->
@@ -25,11 +29,11 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 var positions = [
     { 
         // first position is main
-        name: `<div>Gyeongbokgung Palace</div>`, //name of place
+        name: `<div class="place">Gyeongbokgung Palace</div>`, //name of place
         address: '서울 종로구 사직로 161' //address 
     },
     {
-        name: '<div>국립현대미술관</div>',
+        name: '<div class="place">국립현대미술관</div>',
         address: '서울 종로구 삼청로 30' 
     },
     
