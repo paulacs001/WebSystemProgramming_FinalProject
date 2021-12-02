@@ -24,7 +24,7 @@
                 color="primary"
                 text
               >
-                <router-link to="/{{item.src}}">More</router-link>
+                <router-link to="">More</router-link>
               </v-btn>
             </v-card-actions>
           </v-card>
