@@ -52,7 +52,7 @@
             title: "Jeju",
             subtitle: "A Korean island paradise",
             src: require("../src/assets/Images/jeju.jpeg"),
-            path:"/SeoulMain"
+            path:"/Jeju"
           },
           {
             id: 3,
