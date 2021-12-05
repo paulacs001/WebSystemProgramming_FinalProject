@@ -1,4 +1,6 @@
-# photography
+# tourguide
+
+All routes : "/src/main.js"
 
 ## Project setup
 ```
