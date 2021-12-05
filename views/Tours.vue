@@ -24,7 +24,7 @@
                 color="primary"
                 text
               >
-                <router-link to="">More</router-link>
+                <router-link :to=item.path>More</router-link>
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -44,37 +44,43 @@
             id: 1,
             title: "Seoul",
             subtitle: "Let's discover together Seoul, a capital that is both traditional and modern",
-            src: require("../src/assets/Images/seoul.jpeg")
+            src: require("../src/assets/Images/seoul.jpeg"),
+            path:"/SeoulMain"
           },
           {
             id: 2,
             title: "Jeju",
             subtitle: "A Korean island paradise",
-            src: require("../src/assets/Images/jeju.jpeg")
+            src: require("../src/assets/Images/jeju.jpeg"),
+            path:"/SeoulMain"
           },
           {
             id: 3,
             title: "Busan",
             subtitle: "Formerly romanized as Pusan, it is the economic, cultural and educational center of southeastern South Korea",
-            src: require("../src/assets/Images/busan.jpeg")
+            src: require("../src/assets/Images/busan.jpeg"),
+            path:"/Busan"
           },
           {
             id: 4,
             title: "Yeosu",
             subtitle: "Located on the coast in Jeollanamdo, Yeosu is one of the southernmost cities in Korea, and it actually is its own peninsula",
-            src: require("../src/assets/Images/yeosu.jpeg")
+            src: require("../src/assets/Images/yeosu.jpeg"),
+            path:"/Yeosu"
           },
           {
             id: 5,
             title: "Jeonju",
             subtitle: "It is an important tourist center famous for Korean food, historic buildings, sports activities, and innovative festivals.",
-            src: require("../src/assets/Images/jeonju.jpeg")
+            src: require("../src/assets/Images/jeonju.jpeg"),
+            path:"/Jeonju"
           },
           {
             id: 6,
             title: "Daegu",
             subtitle: "Daegu is the third largest city in South Korea on the northeastern part of Gyeongsangbuk-do.",
-            src: require("../src/assets/Images/daegu.jpeg")
+            src: require("../src/assets/Images/daegu.jpeg"),
+            path:"/Daegu"
           }
         ]
       };

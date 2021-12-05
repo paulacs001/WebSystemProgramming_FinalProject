@@ -70,7 +70,7 @@ export default {
           id: 1,
           name: 'Hangang River',
           address: '257, Gangbyeonbuk-ro, Seongdong-gu, Seoul',
-          phone: 'NONEs'
+          phone: 'NONE'
         },
          {
           id: 2,
