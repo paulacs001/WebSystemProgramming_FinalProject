@@ -1,5 +1,10 @@
 # tourguide
 
+## Cities 
+```
+/views/name_of_city
+```
+
 ## All routes : 
 ```
 /src/main.js
