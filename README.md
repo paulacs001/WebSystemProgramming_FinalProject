@@ -1,6 +1,9 @@
 # tourguide
 
-All routes : "/src/main.js"
+## All routes : 
+```
+/src/main.js
+```
 
 ## Project setup
 ```
