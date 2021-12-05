@@ -11,7 +11,7 @@
             <v-img
               class="white--text align-end"
               height="200px"
-              :src="items.src"
+              :src="item.src"
             >
             </v-img>
             <v-card-title>{{item.title}}</v-card-title>
