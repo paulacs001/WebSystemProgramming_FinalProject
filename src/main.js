@@ -22,6 +22,11 @@ import NaksanPark from '/views/seoul/NaksanPark'
 import NSeoulTower from '/views/seoul/NSeoulTower'
 import SeoulForest from '/views/seoul/SeoulForest'
 import Yeouido from '/views/seoul/Yeouido'
+import Gwangalli from '/views/busan/Gwangalli'
+import Haeundae from '/views/busan/Haeundae'
+import Huinnyeoul from '/views/busan/Huinyeoul'
+import Gamcheon from '/views/busan/Gamcheon'
+import Haedong from '/views/busan/Haedong'
 
 
 Vue.use(VueRouter)
@@ -48,6 +53,11 @@ const router = new VueRouter({
     {path:'/NSeoulTower', component: NSeoulTower},
     {path:'/SeoulForest', component: SeoulForest},
     {path:'/Yeouido', component: Yeouido},
+    {path:'/Gwangalli', component: Gwangalli},
+    {path:'/Haeundae', component: Haeundae},
+    {path:'/Huinnyeoul', component: Huinnyeoul},
+    {path:'/Gamcheon', component: Gamcheon},
+    {path:'/Haedong', component: Haedong},
     {path:'*', component: NotFound}
   ]
 })

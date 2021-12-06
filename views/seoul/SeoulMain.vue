@@ -105,7 +105,7 @@ export default {
 
           },
           {
-            id: 5,
+            id: 8,
             title: "Naksan Park",
             subtitle: "Address : 41 Naksan-gil, Jongno-gu, Seoul",
             src: require("../../src/assets/Images/naksan.jpeg"),
