@@ -1,7 +1,7 @@
 <template>
   <div class="block latestPost Block">
     <v-container>
-      <h2 class="text-center">Seoul Tour</h2>
+      <h2 class="text-center"> Cities</h2>
       <v-row>
         <v-col cols="12" md="4" v-for="item in items" :key="item.id">
           <v-card
