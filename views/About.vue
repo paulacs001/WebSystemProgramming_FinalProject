@@ -13,7 +13,11 @@
     </div>
     <div class="block">
       <v-container>
-        <p>Ea pri vitae antiopam theophrastus, ut sit erat putent eruditi. Qui at mutat adversarium. Postulant delicatissimi ei qui, an nonumy dolorem nam. Cu philosophia instructior pri, nec cu mutat homero saperet, cu paulo ridens legendos has. Cu veri oportere pri, ad integre numquam iudicabit mel. Nec ea ferri iudicabit dissentiet. Ex solet melius omittantur his, in gloriatur vulputate mel. Ad nostro repudiandae ius, est amet molestie te. No est modus sensibus volutpat, et putent dissentias has, et sea eirmod vivendum. Paulo lucilius expetenda sea in, cu nam mazim sanctus ponderum. Te nam mundi corpora, dicat dolore debitis ius in. Indoctum adversarium definitionem an pro, an eam vidit utinam detracto.</p>
+        <p>
+          As a foreigner living in South Korea, we know how small but big South Korea can seem at the same time. Wanting to discover the country, we didn't know where to start as Seoul is a city that we feel is "endless" to explore. So we don't talk to you about the second big city of South Korea Busan as well as the island of Jeju, the cities like Daegu which are all as beautiful but unknown to the general public.
+This country hides a lot of beautiful, breathtaking sights. We want you to have an unforgettable experience with this guide without having to search for all the information and get lost on the Internet. 
+We hope to bring you a tourist experience close to the locals.
+        </p>
       </v-container>
     </div>
     <div class="block">
