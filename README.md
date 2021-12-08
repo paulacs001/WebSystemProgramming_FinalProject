@@ -2,30 +2,28 @@
 
 ## Content of each folder
 
+There is our logo and in the index.html there is the link for the website font and the link for all small icon like the facebook, twitter icon in the footer.
 ```
 /public/favicon.ico & /public/index.html 
 ```
-There is our logo and in the index.html there is the link for the website font and the link for all small icon like the facebook, twitter icon in the footer.
+This folder contain the style of the whole website. The import of the style is in the /src/main.js
 
 ```
 /scss
 ````
-This folder contain the style of the whole website. The import of the style is in the /src/main.js
+This folder contain all the components ressources we need to create our website 
+In this folder.
+App.vue is the code with the basic "configuration" of the website, the haeder and the footer.
 ```
 /src/
 /src/App.vue
 /src/main.js
 ````
-This folder contain all the components ressources we need to create our website 
-In this folder.
-App.vue is the code with the basic "configuration" of the website, the haeder and the footer.
-
+Those two files is the two components we can see on the Home's page 
 ```
 /src/components/Hero.vue 
 /src/components/Gallery.vue
 ```
-Those two files is the two components we can see on the Home's page 
-
 ## Hero.vue
 
 <img width="1410" alt="Screenshot 2021-12-08 at 14 20 25" src="https://user-images.githubusercontent.com/61056377/145152725-1835f81c-dd92-487f-a3f8-a89281036623.png">
@@ -53,25 +51,25 @@ Each time you see ```<router-link>```it means that the main.js is called to corr
   
   For avoid a random route in the browser search I added a route for redirect on a "Not found page". The route name is "/notfound" as you can see on the picture above.
 <img width="1525" alt="Screenshot 2021-12-08 at 14 16 05" src="https://user-images.githubusercontent.com/61056377/145152332-aadd8e5c-ae17-487b-9bbc-eaf37e5db22f.png">
+ 
   
-  
+Those folders containts all the images and plugins we used in our website
 
 ```
 /src/assets/
 /src/plugins/
 ````
-Those folders containts all the images and plugins we used in our website
-
-```
-/src/components/
-```
 This folder containt all the general component like Header, Footer etc.
 ```
-/views/
+/src/components/
 ```
 This folder containt all the pages we can see on the website i.e. each city tour and each places we can visite. 
 Including About's, Contact's, Home's pages.
 Each city are grouped by a folder. ```/views/name_of_city/```
+```
+/views/
+```
+
 
 ##How the whole website work 
 
