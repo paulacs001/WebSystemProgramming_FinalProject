@@ -1,4 +1,4 @@
-# tourguide
+# Tourguide
 
 ## Content of each folder
 
