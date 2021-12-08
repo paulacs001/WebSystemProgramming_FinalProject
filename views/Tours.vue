@@ -22,7 +22,6 @@
             <v-card-actions>
               <v-btn
                 color="primary"
-                text
               >
                 <router-link :to=item.path>More</router-link>
               </v-btn>
