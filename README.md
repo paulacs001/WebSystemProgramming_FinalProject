@@ -26,11 +26,12 @@ App.vue is the code with the basic "configuration" of the website, the haeder an
 ```
 Those two files is the two components we can see on the Home's page 
 
-Hero.vue
+##Hero.vue
 
 <img width="1410" alt="Screenshot 2021-12-08 at 14 20 25" src="https://user-images.githubusercontent.com/61056377/145152725-1835f81c-dd92-487f-a3f8-a89281036623.png">
 
-Gallery.vue
+##Gallery.vue
+
 <img width="744" alt="Screenshot 2021-12-08 at 14 21 31" src="https://user-images.githubusercontent.com/61056377/145152822-7d7bfd8f-9cc0-4656-b2c9-1aa5bc31be01.png">
 
 
