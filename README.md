@@ -26,19 +26,21 @@ App.vue is the code with the basic "configuration" of the website, the haeder an
 ```
 Those two files is the two components we can see on the Home's page 
 
-##Hero.vue
+## Hero.vue
 
 <img width="1410" alt="Screenshot 2021-12-08 at 14 20 25" src="https://user-images.githubusercontent.com/61056377/145152725-1835f81c-dd92-487f-a3f8-a89281036623.png">
 
-##Gallery.vue
+## Gallery.vue
 
 <img width="744" alt="Screenshot 2021-12-08 at 14 21 31" src="https://user-images.githubusercontent.com/61056377/145152822-7d7bfd8f-9cc0-4656-b2c9-1aa5bc31be01.png">
 
 
 Main.js is the file code with all the routes we used on the website for now.
-Each time you see "<router-link>" it means that the main.js is called to correspondd on the right route
+Each time you see ```<router-link>```it means that the main.js is called to correspondd on the right route
+
   
-  Example from Header.vue
+## Example from Header.vue
+  
   <img width="584" alt="Screenshot 2021-12-08 at 14 12 51" src="https://user-images.githubusercontent.com/61056377/145152042-d8779ce5-3900-4d53-89ad-0793b8849eea.png">
   
   We can just import first the corresponding code file
@@ -49,7 +51,7 @@ Each time you see "<router-link>" it means that the main.js is called to corresp
 <img width="584" alt="Screenshot 2021-12-08 at 14 14 28" src="https://user-images.githubusercontent.com/61056377/145152186-c147b807-dc8e-42df-8ac3-93e7fc051aeb.png">
   
   
-  For avoid a random route in the browser search I added a route for redirect on a "Not found page". The route nale is "notfound" as you can see on the picture above.
+  For avoid a random route in the browser search I added a route for redirect on a "Not found page". The route name is "/notfound" as you can see on the picture above.
 <img width="1525" alt="Screenshot 2021-12-08 at 14 16 05" src="https://user-images.githubusercontent.com/61056377/145152332-aadd8e5c-ae17-487b-9bbc-eaf37e5db22f.png">
   
   
