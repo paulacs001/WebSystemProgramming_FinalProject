@@ -78,13 +78,22 @@ Each city are grouped by a folder. ```/views/name_of_city/```
 This code from App.vue is the first one called by the app 
 
 <img width="607" alt="Screenshot 2021-12-08 at 14 01 40" src="https://user-images.githubusercontent.com/61056377/145151099-b408003e-05a5-4e7a-b98b-5d4625382ed2.png"> 
-This App.vue call the /src/components/Header.vue and /src/components/Footer.vue and this  
+This App.vue calls the /src/components/Header.vue and /src/components/Footer.vue
 
 
-## All routes : 
-```
-/src/main.js
-```
+## Vuetify UIComponents : 
+All the design of the website is made with existing UIComponent on Vuetify official documentation : 
+
+For example the code of Gallery.vue
+https://vuetifyjs.com/en/components/images/#grid
+
+## Datas - Example from Home.vue
+Most of datas are load with a for loop
+<img width="744" alt="Screenshot 2021-12-08 at 14 49 27" src="https://user-images.githubusercontent.com/61056377/145155404-18b0922a-9e9e-446d-9b35-b9735680bd48.png">
+
+And generate with Vue
+<img width="728" alt="Screenshot 2021-12-08 at 14 50 26" src="https://user-images.githubusercontent.com/61056377/145155502-d958b5ef-f0aa-4866-b6aa-b9966f958829.png">
+
 
 ## Project setup
 ```
