@@ -7,7 +7,6 @@ There is our logo and in the index.html there is the link for the website font a
 /public/favicon.ico & /public/index.html 
 ```
 This folder contain the style of the whole website. The import of the style is in the /src/main.js
-
 ```
 /scss
 ````
@@ -82,8 +81,15 @@ This App.vue calls the /src/components/Header.vue and /src/components/Footer.vue
 ## Vuetify UIComponents : 
 All the design of the website is made with existing UIComponent on Vuetify official documentation : 
 
-For example the code of Gallery.vue
+Code of Gallery.vue
 https://vuetifyjs.com/en/components/images/#grid
+
+Code of Footer.vue
+https://vuetifyjs.com/en/components/footer/#indigo-footer
+
+Code of Hero.vue
+https://vuetifyjs.com/en/components/carousels/#usage
+
 
 ## Datas - Example from Home.vue
 Most of datas are load with a for loop
