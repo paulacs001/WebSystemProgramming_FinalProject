@@ -13,15 +13,11 @@
     </div>
     <div class="block">
       <v-container>
-<<<<<<< HEAD
         <p>
           As a foreigner living in South Korea, we know how small but big South Korea can seem at the same time. Wanting to discover the country, we didn't know where to start as Seoul is a city that we feel is "endless" to explore. So we don't talk to you about the second big city of South Korea Busan as well as the island of Jeju, the cities like Daegu which are all as beautiful but unknown to the general public.
 This country hides a lot of beautiful, breathtaking sights. We want you to have an unforgettable experience with this guide without having to search for all the information and get lost on the Internet. 
 We hope to bring you a tourist experience close to the locals.
         </p>
-=======
-        <p>As a foreigner living in South Korea, we know how small but big South Korea can seem at the same time. Wanting to discover the country, we didn't know where to start as Seoul is a city that we feel is "endless" to explore. So we don't talk to you about the second big city of South Korea Busan as well as the island of Jeju, the cities like Daegu which are all as beautiful but unknown to the general public. This country hides a lot of beautiful, breathtaking sights. We want you to have an unforgettable experience with this guide without having to search for all the information and get lost on the Internet. We hope to bring you a tourist experience close to the locals.</p>
->>>>>>> 5c3c87a9807ac212fd07506b6668b6b3adc6f832
       </v-container>
     </div>
     <div class="block">
